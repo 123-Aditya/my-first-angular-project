@@ -1,0 +1,22 @@
+<p 
+[ngStyle]="{backgroundColor: getColor()}"
+[ngClass]="{online: serverStatus === 'online'}" 
+>
+    {{ 'Server' }} with ID {{serverId}} is {{getServerStatus()}}
+</p>
+<br>
+<button class="btn btn-primary" 
+(click)="toggleButtonClicked()"
+[ngClass]="{online: serverStatus === 'online'}"
+> Display Details
+</button>
+<br>
+<p *ngIf="toggleButton">Secret password = "Tuna"</p>
+<br>
+<!-- <p *ngFor="let el of counterArray"> -->
+<div 
+*ngFor="let el of counterArray; let i = index"
+[ngStyle]="{backgroundColor: i>=4 ? 'blue' : 'transparent'}"    
+[ngClass]="{'white-text': i>=4}"
+>{{ el }}</div>
+<p> {{counterArray}} </p>
